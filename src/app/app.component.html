@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand navbar-light bg-orange mb-5">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">Micro-Restaurant Demo</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/" routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/restaurants" routerLinkActive="active">Restaurants</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/order" routerLinkActive="active">{{orderItemCount | i18nPlural: orderItemCountMapping}} <i class="bi-cart-fill"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
