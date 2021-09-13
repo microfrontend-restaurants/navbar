@@ -38,7 +38,7 @@
               "libraryName": "navbar",
               "libraryTarget": "umd"
             },
-            "deployUrl": "http://localhost:4201/"
+            "deployUrl": "/"
           },
           "configurations": {
             "production": {
