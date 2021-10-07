@@ -23,13 +23,12 @@ export class AppComponent implements OnInit {
     let items = localStorage.getItem("checkout");
     this.orderItemCount = items == null ? 0 : (JSON.parse(items) as number[]).length;
 
-    window.addEventListener("discover:item_added", e =>{
+    window.addEventListener("order:item_added", e =>{
       this.orderItemCount++;
     });
 
     window.addEventListener("order:orderCount_updated", (e: any) => {
       this.orderItemCount = e.detail.count;
-      console.log(e);
     });
   }
 }
