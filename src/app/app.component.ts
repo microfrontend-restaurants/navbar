@@ -23,7 +23,17 @@ export class AppComponent implements OnInit {
     let items = localStorage.getItem("checkout");
     this.orderItemCount = items == null ? 0 : (JSON.parse(items) as number[]).length;
 
+    // const channel = new BroadcastChannel("restaurant_channel");
+    // channel.onmessage = e => {
+    //   if(e.data.type === "order:item_added") {
+    //     console.log(`Id of added item: ${e.data.id}`);
+    //     this.orderItemCount++;
+    //     //...
+    //   }
+    // };
+
     window.addEventListener("order:item_added", e =>{
+      console.log(`Id of added item: ${JSON.stringify((<CustomEvent>e).detail)}`);
       this.orderItemCount++;
     });
 
